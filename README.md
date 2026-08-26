@@ -1,6 +1,6 @@
 # DevOpsWithMukul
 1. [Linux](Linux/README.md)
-2. [Shell Scripting](Shell%Script\README.md)
+2. [Shell Scripting](Shell%20Script/README.md)
 3. [Python](Python/README.md)
 4. [Git](Git/README.md)
 5. [Docker](Docker/README.md)
