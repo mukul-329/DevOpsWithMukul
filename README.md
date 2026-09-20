@@ -7,3 +7,6 @@
 6. [Kubernetes](Kubernetes/README.md)
 7. [Terraform](Terraform/README.md)
 8. [Ansible](Ansible/README.md)
+9. [Projects](Projects/README.md)
+10. [DevOps in 90 Days](DevOps@90Days/README.md)
+11. [Email Templates](Email_Templates/)
