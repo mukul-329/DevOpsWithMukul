@@ -1,4 +1,4 @@
-# DevOpsWithMukul
+# DevOps RoadMap (90 Days)
 1. [Linux](Linux/README.md)
 2. [Shell Scripting](Shell%20Script/README.md)
 3. [Python](Python/README.md)
@@ -10,4 +10,4 @@
 9. [Ansible](Ansible/README.md)
 10. [Projects](Projects/README.md)
 11. [DevOps in 90 Days](DevOps@90Days/README.md)
-12. [Email Templates](Email_Templates/)
+12. [Cold Email Templates](Email_Templates/)
