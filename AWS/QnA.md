@@ -25,3 +25,10 @@ For a more secure architecture, I would place CloudFront + AWS WAF in front of t
 For administrative access, I would use AWS Systems Manager Session Manager rather than exposing SSH port 22.
 ```
 
+4. Why would we need WAF in front of load balancer, will WAF also supports DDOS protection, if not, how can we enable DDoS protection ?
+```
+We put AWS WAF in front of the load balancer mainly to protect the application at Layer 7, for example against SQL injection, XSS, malicious HTTP requests, bots, and rate-based attacks.
+AWS WAF is not a complete DDoS protection service; AWS provides baseline DDoS protection through AWS Shield Standard, which is automatically included for AWS services such as ALB and CloudFront.
+For stronger protection against large or sophisticated attacks, I would use AWS Shield Advanced, which provides enhanced DDoS detection and mitigation and additional protections for supported resources.
+For a production web application, a common architecture is Route 53 → CloudFront + AWS WAF → ALB → private EC2, with Shield providing DDoS protection at the AWS edge. The important distinction is WAF = application-layer security, while Shield = DDoS protection.
+```
