@@ -1,4 +1,4 @@
-## Quiz on AWS
+## Security in AWS
 
 1. How will you secure AWS production environment ?
 ```
