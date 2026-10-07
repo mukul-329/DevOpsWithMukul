@@ -32,3 +32,9 @@ AWS WAF is not a complete DDoS protection service; AWS provides baseline DDoS pr
 For stronger protection against large or sophisticated attacks, I would use AWS Shield Advanced, which provides enhanced DDoS detection and mitigation and additional protections for supported resources.
 For a production web application, a common architecture is Route 53 → CloudFront + AWS WAF → ALB → private EC2, with Shield providing DDoS protection at the AWS edge. The important distinction is WAF = application-layer security, while Shield = DDoS protection.
 ```
+5. WAF vs AWS Shield Standard vs Shield Advanced ?
+```
+AWS WAF, Shield Standard, and Shield Advanced solve different layers of the security problem. AWS WAF is primarily a Layer 7 web application firewall that inspects HTTP/HTTPS requests and can block threats such as SQL injection, XSS, malicious IPs, bots, and request floods using rules and rate-based controls.
+AWS Shield Standard provides automatic DDoS protection at no additional charge, primarily protecting AWS resources against common DDoS attacks, whereas Shield Advanced provides expanded DDoS protection across Layer 3, Layer 4, and Layer 7, along with advanced visibility and access to the AWS DDoS Response Team (SRT).
+In a production architecture, I would typically use CloudFront + WAF + Shield, because WAF handles application-specific malicious requests while Shield handles DDoS mitigation.
+```
