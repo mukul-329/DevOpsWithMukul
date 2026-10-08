@@ -22,6 +22,7 @@ For administration, I would use SSM Session Manager rather than exposing SSH pub
 I would deploy a hardened AMI, apply regular OS security patches, remove unnecessary services, and use Amazon Inspector for vulnerability assessment.
 I would enable EBS encryption with KMS, store secrets in Secrets Manager, and enable CloudTrail, GuardDuty, and CloudWatch for auditing and monitoring.
 ```
+
 4. How would you secure the SSH access to an EC2 instance if Session Manager is not available?
 ```
 If SSM Session Manager is available, I would give the EC2 instance the required IAM role and create the necessary VPC endpoints for Systems Manager, allowing the instance to communicate with the AWS Systems Manager service without requiring public internet access. I would then use Session Manager from my workstation, so I don't need SSH or a bastion host.
@@ -29,6 +30,13 @@ If Session Manager isn't available and I specifically require SSH, I would estab
 I would never assume that a VPC endpoint itself provides a path from my laptop to the EC2 instance.
 ```
 
+5. what is the defference betweem reboot and hibernate instance state ?
+```
+Reboot restarts the operating system on the same EC2 instance, similar to restarting a physical server, while Hibernate saves the instance's RAM state to the root EBS volume and then stops the instance.
+After hibernation, when the instance starts again, the OS can resume from the saved RAM state instead of performing a normal fresh boot. With a reboot, instance memory is cleared, but with hibernation, applications and processes can resume from their previous in-memory state, subject to the workload and supported configuration.
+Both operations preserve the instance identity and attached EBS data, but hibernation has additional requirements and is supported only for certain instance types, operating systems, and root EBS configurations.
+I would use reboot for normal OS/application restarts and hibernate when I specifically need to preserve the in-memory state and the workload supports hibernation.
+```
 
 
 
