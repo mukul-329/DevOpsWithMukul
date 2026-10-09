@@ -1,8 +1,14 @@
 ## Senior DevOps Engineer
 
 1. What is CI and CD (continuous delivery/deployment) ?
+   ```
+   CI (Continuous Integration) is the practice of frequently merging code changes into a shared repository, where automated builds and tests validate the changes.
+   CD (Continuous Delivery) extends CI by automatically preparing and validating the application for release, but production deployment usually requires manual approval.
+   Continuous Deployment goes one step further: every change that passes the required automated checks is deployed to production automatically, without a manual release approval.
+   A typical pipeline includes code checkout, build, unit testing, code-quality checks, security scanning, artifact/image creation, deployment, and post-deployment validation. Tools such as Jenkins, GitHub Actions, GitLab CI, and Azure DevOps automate these stages, improving release speed, consistency, and reliability.
+   ```
 
-2. We have to deploy one of API, what all the requirements will you gather to deploy it on production ?
+3. We have to deploy one of API, what all the requirements will you gather to deploy it on production ?
    ```
     Before deploying an API to production on AWS EKS, I would gather requirements across application, traffic, infrastructure, security, availability, observability, and deployment strategy.
     First, I would understand the API's runtime, container image, ports, dependencies, environment variables, secrets, health-check endpoints, and external integrations.
